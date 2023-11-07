@@ -49,7 +49,7 @@ jobs:
           filters: |
             container_folder:
               README.md
-          # ${{ matrix.name }}/*
+          # ./${{ matrix.name }}/*
 
       - name: ❔ Stop if files not changed
         if: ${{ steps.file_change.outputs.container_folder != 'true' }}
