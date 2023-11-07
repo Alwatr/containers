@@ -26,6 +26,7 @@ jobs:
       matrix:
         include:
           - name: alpine
+            path: alpine
             version:
               short: 3
               full: 3.17
@@ -48,7 +49,7 @@ jobs:
         with:
           filters: |
             container_folder:
-              ./${{ matrix.name }}/*
+              ./${{ matrix.path }}/*
 
       # - name: ❔ Stop if files not changed
       #   if: ${{ steps.file_change.outputs.container_folder != 'true' }}
@@ -105,7 +106,7 @@ jobs:
         id: build_and_push
         uses: docker/build-push-action@v5.0.0
         with:
-          context: ./${{matrix.name}}
+          context: ./${{matrix.path}}
           push: ${{github.event_name != 'pull_request'}}
           tags: ${{steps.meta.outputs.tags}}
           labels: ${{steps.meta.outputs.labels}}
