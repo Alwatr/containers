@@ -71,8 +71,13 @@ jobs:
             type=raw,value=${{matrix.version.short}}
             type=raw,value=${{matrix.version.full}}
           labels: |
-            org.opencontainers.image.authors=Ali.Mihandoost@gmail.com,njfamirm@gmail.com
-            org.opencontainers.image.title=@Alwatr/${{matrix.name}}
+            org.opencontainers.image.title="alwatr/${{matrix.name}}"
+            org.opencontainers.image.authors=S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)
+            org.opencontainers.image.source="https://github.com/Alwatr/containers/tree/main/${{matrix.name}}"
+            org.opencontainers.image.licenses="MIT"
+            org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/${{matrix.name}}"
+            org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/${{matrix.name}}"
+            org.opencontainers.image.vendor="Alwatr"
 
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
