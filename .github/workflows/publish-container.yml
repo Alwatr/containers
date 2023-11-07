@@ -39,8 +39,6 @@ jobs:
       id-token: write
 
     steps:
-      - name: ⤵️ Checkout repository
-        uses: actions/checkout@v4.0.0
 
       - name: ❔ Check Container files changed
         id: file_change
@@ -58,6 +56,10 @@ jobs:
       #     gh run watch ${{ github.run_id }}
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ⤵️ Checkout repository
+        if: ${{ steps.file_change.outputs.container_folder == 'true' }}
+        uses: actions/checkout@v4.0.0
 
       - name: 🏗 Extract Docker metadata
         id: meta
