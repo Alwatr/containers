@@ -1,3 +1,3 @@
-# PHP Container Mirror
+# Alwatr PHP Container
 
 A very slow, lazy and stupid server-side programming language for newbies, packaged by Alwatr.
