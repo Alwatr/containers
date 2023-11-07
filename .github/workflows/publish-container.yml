@@ -39,7 +39,6 @@ jobs:
       id-token: write
 
     steps:
-
       - name: ⤵️ Checkout repository
         uses: actions/checkout@v4.0.0
 
@@ -119,6 +118,5 @@ jobs:
       - name: 🏗 Sign the image with GitHub OIDC Token
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
         env:
-          DIGEST: ${{ steps.build_and_push.outputs.digest }}
-          TAGS: ${{ steps.meta.outputs.tags }}
-        run: cosign sign --yes "${TAGS}@${DIGEST}"
+          COSIGN_EXPERIMENTAL: 'true'
+        run: echo "${{steps.meta.outputs.tags}}" | xargs -I {} cosign sign --yes {}@${{steps.build-and-push.outputs.digest}}
