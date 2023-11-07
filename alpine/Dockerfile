@@ -1,7 +1,7 @@
 FROM docker.io/library/alpine:3.17
 
-ARG BUILD_DATE
 ARG BUILD_REV
+ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/alpine" \
       org.opencontainers.image.description="This is a lightweight Linux image for use in containerized applications. It includes only the necessary packages and dependencies to keep the image size small and efficient, packaged by Alwatr." \
       org.opencontainers.image.base.name="docker.io/library/alpine:3.17" \

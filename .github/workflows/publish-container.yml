@@ -115,8 +115,8 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           build-args: |
-            BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
-            BUILD_REV=$(git rev-parse HEAD)
+            BUILD_DATE=${{github.event.repository.updated_at}}
+            BUILD_REV=${{github.sha}}
 
       - name: 🏗 Sign the image with GitHub OIDC Token
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
