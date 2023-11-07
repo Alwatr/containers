@@ -62,6 +62,12 @@ jobs:
               short: 6
               full: 6.3-php8.2-fpm
 
+          - name: tdlib
+            path: tdlib
+            version:
+              short: 1
+              full: 1.8.0
+
     permissions:
       contents: read
       packages: write
