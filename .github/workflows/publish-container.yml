@@ -13,10 +13,11 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  USER: alwatr
 
 jobs:
   build:
-    if: github.repository_owner == 'alwatr'
+    if: github.repository_owner == 'Alwatr'
 
     name: Build & Publish Containers
     runs-on: ubuntu-latest
@@ -109,8 +110,8 @@ jobs:
           context: ./${{matrix.path}}
           push: ${{github.event_name != 'pull_request'}}
           tags: |
-            ${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.short}}
-            ${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.full}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.short}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.full}}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           build-args: |
@@ -122,5 +123,5 @@ jobs:
         env:
           COSIGN_EXPERIMENTAL: 'true'
         run: |
-          cosign sign --yes "${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.short}}@${{steps.build_and_push.outputs.digest}}"
-          cosign sign --yes "${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.full}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.short}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.full}}@${{steps.build_and_push.outputs.digest}}"
