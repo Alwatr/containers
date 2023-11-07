@@ -1,6 +1,6 @@
 # Alwatr Alpine Container
 
-The unofficial docker container image for Alpine Linux. The image is only 5MB and has access to a package repository that is much more featureful than other BusyBox based images.
+The unofficial docker container image for Alpine Linux packaged by Alwatr. The image is only 5MB and has access to a package repository that is much more featureful than other BusyBox based images.
 
 ## Usage
 
