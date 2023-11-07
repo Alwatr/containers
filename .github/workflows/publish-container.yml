@@ -16,7 +16,7 @@ env:
 
 jobs:
   build:
-    if: github.repository_owner == 'Alwatr'
+    if: github.repository_owner == 'alwatr'
 
     name: Build & Publish Containers
     runs-on: ubuntu-latest
