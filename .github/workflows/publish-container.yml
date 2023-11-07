@@ -31,6 +31,36 @@ jobs:
               short: 3
               full: 3.17
 
+          - name: php
+            path: php/7.4-apache
+            version:
+              short: 7-apache
+              full: 7.4-apache
+
+          - name: php
+            path: php/7.4-fpm
+            version:
+              short: 7-fpm
+              full: 7.4-fpm
+
+          - name: php
+            path: php/8.2-fpm
+            version:
+              short: 8-fpm
+              full: 8.2-fpm
+
+          - name: wordpress
+            path: wordpress/php7.4
+            version:
+              short: 6-php7
+              full: 6.1-php7.4-fpm
+
+          - name: wordpress
+            path: wordpress/php8.2
+            version:
+              short: 6
+              full: 6.2-php8.2-fpm
+
     permissions:
       contents: read
       packages: write
