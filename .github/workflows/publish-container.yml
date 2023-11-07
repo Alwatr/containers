@@ -73,7 +73,8 @@ jobs:
         uses: actions/cache@v3
         with:
             path: /tmp/.buildx-cache
-            key: image-${{ matrix.name }}-version-${{ matrix.version.full }}-buildx-${{ hashFiles(format('{0}/Container_folder', matrix.path)) }}
+          restore-keys: |
+            image-${{ matrix.name }}-version-${{ matrix.version.full }}-buildx-
 
       - name: 🏗 Log into registry ${{env.REGISTRY}}
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
