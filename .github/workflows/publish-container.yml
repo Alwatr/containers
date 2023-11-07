@@ -70,6 +70,9 @@ jobs:
           tags: |
             type=raw,value=${{matrix.version.short}}
             type=raw,value=${{matrix.version.full}}
+          labels: |
+            org.opencontainers.image.authors=Ali.Mihandoost@gmail.com,njfamirm@gmail.com
+            org.opencontainers.image.title=@Alwatr/${{matrix.name}}
 
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
