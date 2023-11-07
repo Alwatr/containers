@@ -33,6 +33,7 @@ jobs:
     permissions:
       contents: read
       packages: write
+      actions: write
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
       id-token: write
@@ -48,6 +49,15 @@ jobs:
           filters: |
             container_folder:
               ${{ matrix.name }}/*
+
+      - name: ❔ Stop if files not changed
+        # if: ${{ steps.file_change.outputs.container_folder != 'true' }}
+        if: ${{ github.event_name != 'pull_request' }}
+        run: |
+          gh run cancel ${{ github.run_id }}
+          gh run watch ${{ github.run_id }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: 🏗 Extract Docker metadata
         if: ${{ steps.file_change.outputs.container_folder == 'true' }}
