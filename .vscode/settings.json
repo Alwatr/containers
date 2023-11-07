@@ -1,5 +1,21 @@
 {
+  "editor.wordWrapColumn": 120,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.useEditorConfig": true,
+  "files.associations": {
+    "*.mt": "routeros",
+    "*.conf.template": "nginx",
+    "ssh_config": "ssh_config",
+    "*.njk": "html",
+    "ssh-config": "ssh_config"
+  },
+  "markdownlint.ignore": [
+    "**/CHANGELOG.md"
+  ],
+  "cSpell.language": "en,fa,fa-IR",
   "cSpell.words": [
-    "alwatr"
-  ]
+    "Alwatr"
+  ],
+  "git.autoStash": true,
+  "githubPullRequests.ignoredPullRequestBranches": ["main", "next"]
 }
