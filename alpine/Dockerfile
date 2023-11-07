@@ -1,6 +1,6 @@
 FROM docker.io/library/alpine:3.17
 
-LABEL org.opencontainers.image.description="Minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!"
+LABEL org.opencontainers.image.description "Minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!"
 
 ARG APK_TESTING
 RUN set -ex; \
