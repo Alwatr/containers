@@ -19,5 +19,3 @@ RUN set -ex; \
     echo "Add alpine edge testing repository"; \
     apk add --no-cache ${APK_INSTALL}; \
   fi
-
-CMD ["/bin/sh"]
