@@ -1,12 +1,12 @@
-FROM docker.io/library/wordpress:6.4.0-php8.2-fpm
+FROM docker.io/library/wordpress:6.3.2-php8.2-fpm
 
 ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/wordpress" \
       org.opencontainers.image.description="A very slow, lazy and stupid CMS for newbies, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/library/wordpress:6.4.0-php8.2-fpm" \
-      org.opencontainers.image.version="6.4.0" \
-      org.opencontainers.image.ref.name="6.4.0-php8.2-fpm" \
+      org.opencontainers.image.base.name="docker.io/library/wordpress:6.3.2-php8.2-fpm" \
+      org.opencontainers.image.version="6.3.2" \
+      org.opencontainers.image.ref.name="6.3.2-php8.2-fpm" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.created=${BUILD_DATE} \
       org.opencontainers.image.revision=${BUILD_REV} \

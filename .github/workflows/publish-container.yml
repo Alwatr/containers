@@ -60,7 +60,7 @@ jobs:
             path: wordpress/php8.2
             version:
               short: 6
-              full: 6.2-php8.2-fpm
+              full: 6.3-php8.2-fpm
 
     permissions:
       contents: read
