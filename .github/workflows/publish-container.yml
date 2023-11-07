@@ -64,9 +64,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-      # actions: write
-      # This is used to complete the identity challenge
-      # with sigstore/fulcio when running outside of PRs.
       id-token: write
 
     steps:
@@ -80,33 +77,6 @@ jobs:
           filters: |
             container_folder:
               ./${{ matrix.path }}/*
-
-      # - name: ❔ Stop if files not changed
-      #   if: ${{ steps.file_change.outputs.container_folder != 'true' }}
-      #   run: |
-      #     gh run cancel ${{ github.run_id }}
-      #     gh run watch ${{ github.run_id }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 🏗 Extract Docker metadata
-        id: meta
-        if: ${{ steps.file_change.outputs.container_folder == 'true' }}
-        uses: docker/metadata-action@v5.0.0
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          images: name=${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}
-          tags: |
-            type=raw,value=${{matrix.version.short}}
-            type=raw,value=${{matrix.version.full}}
-          labels: |
-            org.opencontainers.image.title="alwatr/${{matrix.name}}"
-            org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)"
-            org.opencontainers.image.source="https://github.com/Alwatr/containers/tree/main/${{matrix.name}}"
-            org.opencontainers.image.licenses="MIT"
-            org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/${{matrix.name}}"
-            org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/${{matrix.name}}"
-            org.opencontainers.image.vendor="Alwatr"
 
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
@@ -138,16 +108,19 @@ jobs:
         with:
           context: ./${{matrix.path}}
           push: ${{github.event_name != 'pull_request'}}
-          tags: ${{steps.meta.outputs.tags}}
-          labels: ${{steps.meta.outputs.labels}}
+          tags: |
+            ${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.short}}
+            ${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.full}}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-          # cache-from: type=gha
-          # cache-to: type=gha,mode=max
+          build-args: |
+            BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+            BUILD_REV=$(git rev-parse HEAD)
 
-      # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-an-intermediate-environment-variable
       - name: 🏗 Sign the image with GitHub OIDC Token
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
         env:
           COSIGN_EXPERIMENTAL: 'true'
-        run: echo "${{steps.meta.outputs.tags}}" | xargs -I {} cosign sign --yes {}@${{steps.build_and_push.outputs.digest}}
+        run: |
+          cosign sign --yes "${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.short}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{github.repository_owner}}/${{matrix.name}}:${{matrix.version.full}}@${{steps.build_and_push.outputs.digest}}"
