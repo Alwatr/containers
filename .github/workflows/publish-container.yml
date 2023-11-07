@@ -41,14 +41,14 @@ jobs:
           - name: php
             path: php/7.4-fpm
             version:
-              short: 7-fpm
-              full: 7.4-fpm
+              short: 7
+              full: 7.4
 
           - name: php
             path: php/8.2-fpm
             version:
-              short: 8-fpm
-              full: 8.2-fpm
+              short: 8
+              full: 8.2
 
           - name: wordpress
             path: wordpress/php7.4

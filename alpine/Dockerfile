@@ -16,7 +16,6 @@ LABEL org.opencontainers.image.title="alwatr/alpine" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/alpine" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)"
 
-
 ARG APK_TESTING
 RUN set -ex; \
   if [ "$APK_TESTING" != "1" ]; then \
