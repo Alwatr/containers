@@ -17,6 +17,7 @@ updates:
       github-actions:
         patterns:
           - '*'
+
   - package-ecosystem: docker
     directory: /
     open-pull-requests-limit: 20
