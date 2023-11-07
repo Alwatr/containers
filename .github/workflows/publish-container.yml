@@ -109,6 +109,7 @@ jobs:
 
       # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-an-intermediate-environment-variable
       - name: 🏗 Sign the image with GitHub OIDC Token
+        if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
         env:
           DIGEST: ${{ steps.build_and_push.outputs.digest }}
           TAGS: ${{ steps.meta.outputs.tags }}
