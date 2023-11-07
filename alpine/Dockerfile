@@ -1,6 +1,21 @@
 FROM docker.io/library/alpine:3.17
 
-LABEL org.opencontainers.image.description "Minimal Docker image based on Alpine Linux with a complete package index and only 5 MB in size!"
+ARG BUILD_DATE
+ARG BUILD_REV
+LABEL org.opencontainers.image.title="alwatr/alpine" \
+      org.opencontainers.image.description="This is a lightweight Linux image for use in containerized applications. It includes only the necessary packages and dependencies to keep the image size small and efficient, packaged by Alwatr." \
+      org.opencontainers.image.base.name="docker.io/library/alpine:3.17" \
+      org.opencontainers.image.version="3.17" \
+      org.opencontainers.image.ref.name="3.17" \
+      org.opencontainers.image.licenses="MIT" \
+      org.opencontainers.image.created=${BUILD_DATE} \
+      org.opencontainers.image.revision=${BUILD_REV} \
+      org.opencontainers.image.vendor="Alwatr" \
+      org.opencontainers.image.source="https://github.com/Alwatr/containers/tree/main/alpine" \
+      org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/alpine" \
+      org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/alpine" \
+      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)"
+
 
 ARG APK_TESTING
 RUN set -ex; \
