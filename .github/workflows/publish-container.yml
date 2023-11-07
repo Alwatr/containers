@@ -48,11 +48,11 @@ jobs:
         with:
           filters: |
             container_folder:
-              ${{ matrix.name }}/*
+              README.md
+          # ${{ matrix.name }}/*
 
       - name: ❔ Stop if files not changed
-        # if: ${{ steps.file_change.outputs.container_folder != 'true' }}
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ steps.file_change.outputs.container_folder != 'true' }}
         run: |
           gh run cancel ${{ github.run_id }}
           gh run watch ${{ github.run_id }}
