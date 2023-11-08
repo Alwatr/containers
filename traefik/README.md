@@ -1,0 +1,5 @@
+# Alwatr Traefik Container
+
+Traefik is designed to work with modern container orchestration platforms like Docker and Kubernetes, and it can automatically discover new services as they are added to the environment. It also provides advanced features like automatic SSL certificate generation and renewal, dynamic routing based on service health checks, and support for multiple backends.
+
+For more information on Traefik, see the official documentation at <https://doc.traefik.io/traefik/>.
