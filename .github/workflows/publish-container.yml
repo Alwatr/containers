@@ -82,6 +82,15 @@ jobs:
             container_folder:
               ./${{ matrix.path }}/*
 
+      - name: 🏗 Extract version from dockerfile
+        if: ${{ steps.file_change.outputs.container_folder == 'true' }}
+        id: version
+        run: |
+          version_full=$(grep 'ir.alwatr.image.version.full' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
+          version_short=$(grep 'ir.alwatr.image.version.short' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
+          echo "version_full=$version_full" >> $GITHUB_OUTPUT
+          echo "version_short=$version_short" >> $GITHUB_OUTPUT
+
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
         uses: sigstore/cosign-installer@v3.1.2
@@ -105,15 +114,6 @@ jobs:
           username: ${{github.repository_owner}}
           password: ${{secrets.GITHUB_TOKEN}}
 
-      - name: 🏗 Extract version from dockerfile
-        if: ${{ steps.file_change.outputs.container_folder == 'true' }}
-        id: meta
-        run: |
-          version_full=$(grep 'ir.alwatr.image.version.full' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
-          version_short=$(grep 'ir.alwatr.image.version.short' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
-          echo "version_full=$version_full" >> $GITHUB_OUTPUT
-          echo "version_short=$version_short" >> $GITHUB_OUTPUT
-
       - name: 🚀 Build and push container image
         if: ${{ steps.file_change.outputs.container_folder == 'true' }}
         id: build_and_push
@@ -122,8 +122,8 @@ jobs:
           context: ./${{matrix.path}}
           push: ${{github.event_name != 'pull_request'}}
           tags: |
-            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_full}}
-            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_short}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_full}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_short}}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           build-args: |
@@ -135,5 +135,5 @@ jobs:
         env:
           COSIGN_EXPERIMENTAL: 'true'
         run: |
-          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_full}}@${{steps.build_and_push.outputs.digest}}"
-          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_short}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_full}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_short}}@${{steps.build_and_push.outputs.digest}}"
