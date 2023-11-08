@@ -15,5 +15,5 @@ LABEL org.opencontainers.image.title="alwatr/wordpress" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/wordpress/php7.4" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/wordpress" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
-      cloud.alwatr.image.version.full="6.1.1-php7.4-fpm" \
-      cloud.alwatr.image.version.short="6-php7.4"
+      cloud.alwatr.image.version.full="6.1.1-php7.4" \
+      cloud.alwatr.image.version.short="6-php7"
