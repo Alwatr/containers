@@ -90,6 +90,8 @@ jobs:
           version_short=$(grep 'cloud.alwatr.image.version.short' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
           echo "version_full=$version_full" >> $GITHUB_OUTPUT
           echo "version_short=$version_short" >> $GITHUB_OUTPUT
+          echo "version_full: $version_full"
+          echo "version_short: $version_short"
 
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
