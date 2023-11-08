@@ -75,10 +75,16 @@ jobs:
               full: 4.8-3.24.4
 
           - name: mariadb
-            path: mariadb/10.11
+            path: mariadb/11
+            version:
+              short: 11
+              full: 11.0-3.26.4
+
+          - name: mariadb
+            path: mariadb/10
             version:
               short: 10
-              full: 10.11-3.26.4
+              full: 10.9-3.26.4
 
           - name: wordpress
             path: wordpress/php7.4
