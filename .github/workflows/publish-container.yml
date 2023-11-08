@@ -27,13 +27,13 @@ jobs:
       matrix:
         include:
           - name: traefik
-            path: traefik/1/
+            path: traefik/1
             version:
               short: 1
               full: 1.7.34
 
           - name: traefik
-            path: traefik/3/
+            path: traefik/3
             version:
               short: 3
               full: 3.0.0-beta4
@@ -43,6 +43,12 @@ jobs:
             version:
               short: 3
               full: 3.17
+
+          - name: nocodb
+            path: nocodb
+            version:
+              short: 0.202
+              full: 0.202.5
 
           - name: php
             path: php/7.4-apache
@@ -69,16 +75,10 @@ jobs:
               full: 4.8-3.24.4
 
           - name: mariadb
-            path: mariadb
+            path: mariadb/10.11
             version:
               short: 10
               full: 10.9-3.26.4
-
-          - name: nocodb
-            path: nocodb
-            version:
-              short: 0.202
-              full: 0.202.5
 
           - name: wordpress
             path: wordpress/php7.4
