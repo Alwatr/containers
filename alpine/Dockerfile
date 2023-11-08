@@ -14,7 +14,10 @@ LABEL org.opencontainers.image.title="alwatr/alpine" \
       org.opencontainers.image.source="https://github.com/Alwatr/containers/tree/main/alpine" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/alpine" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/alpine" \
-      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)"
+      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
+      maintainer="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
+      version="3.17" \
+      description="This is a lightweight Linux image for use in containerized applications. It includes only the necessary packages and dependencies to keep the image size small and efficient, packaged by Alwatr."
 
 ARG APK_TESTING
 RUN set -ex; \
