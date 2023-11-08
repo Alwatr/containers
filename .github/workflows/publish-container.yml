@@ -27,10 +27,16 @@ jobs:
       matrix:
         include:
           - name: traefik
-            path: traefik
+            path: traefik/1/
             version:
               short: 1
-              full: 1.7.34-alpine
+              full: 1.7.34
+
+          - name: traefik
+            path: traefik/3/
+            version:
+              short: 3
+              full: 3.0.0-beta4
 
           - name: alpine
             path: alpine
