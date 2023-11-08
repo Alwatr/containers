@@ -26,11 +26,29 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - name: traefik
+            path: traefik/1
+            version:
+              short: 1
+              full: 1.7.34
+
+          - name: traefik
+            path: traefik/3
+            version:
+              short: 3
+              full: 3.0.0-beta4
+
           - name: alpine
             path: alpine
             version:
               short: 3
               full: 3.17
+
+          - name: nocodb
+            path: nocodb
+            version:
+              short: 0
+              full: 0.202.5
 
           - name: php
             path: php/7.4-apache
@@ -49,6 +67,24 @@ jobs:
             version:
               short: 8
               full: 8.2
+
+          - name: adminer
+            path: adminer
+            version:
+              short: 4
+              full: 4.8-3.24.4
+
+          - name: mariadb
+            path: mariadb/11
+            version:
+              short: 11
+              full: 11.0-3.26.4
+
+          - name: mariadb
+            path: mariadb/10
+            version:
+              short: 10
+              full: 10.9-3.26.4
 
           - name: wordpress
             path: wordpress/php7.4

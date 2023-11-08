@@ -9,13 +9,9 @@
     "*.njk": "html",
     "ssh-config": "ssh_config"
   },
-  "markdownlint.ignore": [
-    "**/CHANGELOG.md"
-  ],
+  "markdownlint.ignore": ["**/CHANGELOG.md"],
   "cSpell.language": "en,fa,fa-IR",
-  "cSpell.words": [
-    "Alwatr"
-  ],
+  "cSpell.words": ["adminer", "alwatr", "nocodb", "traefik"],
   "git.autoStash": true,
   "githubPullRequests.ignoredPullRequestBranches": ["main", "next"]
 }
