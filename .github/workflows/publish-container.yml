@@ -26,6 +26,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - image: traefik
+            path: traefik
+            version:
+              short: 1
+              full: 1.7.34-alpine
+
           - name: alpine
             path: alpine
             version:
@@ -49,6 +55,24 @@ jobs:
             version:
               short: 8
               full: 8.2
+
+          - image: adminer
+            path: adminer
+            version:
+              short: 4
+              full: 4.8-3.24.4
+
+          - image: mariadb
+            path: mariadb
+            version:
+              short: 10
+              full: 10.9-3.26.4
+
+          - image: nocodb
+            path: nocodb
+            version:
+              short: 0.202
+              full: 0.202.5
 
           - name: wordpress
             path: wordpress/php7.4
