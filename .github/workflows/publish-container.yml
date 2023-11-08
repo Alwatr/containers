@@ -47,7 +47,7 @@ jobs:
           - name: nocodb
             path: nocodb
             version:
-              short: 0.202
+              short: 0
               full: 0.202.5
 
           - name: php
@@ -78,7 +78,7 @@ jobs:
             path: mariadb/10.11
             version:
               short: 10
-              full: 10.9-3.26.4
+              full: 10.11-3.26.4
 
           - name: wordpress
             path: wordpress/php7.4
