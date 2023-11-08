@@ -111,8 +111,8 @@ jobs:
         run: |
           ref_name=$(grep 'org.opencontainers.image.ref.name' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
           version=$(grep 'org.opencontainers.image.version' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
-          echo ::set-output name=ref_name::${ref_name}
-          echo ::set-output name=version::${version}
+          echo "ref_name=$ref_name" >> $GITHUB_OUTPUT
+          echo "version=$version" >> $GITHUB_OUTPUT
 
       - name: 🚀 Build and push container image
         if: ${{ steps.file_change.outputs.container_folder == 'true' }}
