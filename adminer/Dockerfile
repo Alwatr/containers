@@ -14,4 +14,6 @@ LABEL org.opencontainers.image.title="alwatr/adminer" \
       org.opencontainers.image.source="https://github.com/Alwatr/containers/tree/main/adminer" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/adminer" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/adminer" \
-      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)"
+      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
+      ir.alwatr.image.version.full="4.8-3.24.4" \
+      ir.alwatr.image.version.short="4"

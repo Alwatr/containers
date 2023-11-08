@@ -109,10 +109,10 @@ jobs:
         if: ${{ steps.file_change.outputs.container_folder == 'true' }}
         id: meta
         run: |
-          ref_name=$(grep 'org.opencontainers.image.ref.name' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
-          version=$(grep 'org.opencontainers.image.version' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
-          echo "ref_name=$ref_name" >> $GITHUB_OUTPUT
-          echo "version=$version" >> $GITHUB_OUTPUT
+          version_full=$(grep 'ir.alwatr.image.version.full' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
+          version_short=$(grep 'ir.alwatr.image.version.short' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
+          echo "version_full=$version_full" >> $GITHUB_OUTPUT
+          echo "version_short=$version_short" >> $GITHUB_OUTPUT
 
       - name: 🚀 Build and push container image
         if: ${{ steps.file_change.outputs.container_folder == 'true' }}
@@ -122,8 +122,8 @@ jobs:
           context: ./${{matrix.path}}
           push: ${{github.event_name != 'pull_request'}}
           tags: |
-            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.ref_name}}
-            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_full}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_short}}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           build-args: |
@@ -135,5 +135,5 @@ jobs:
         env:
           COSIGN_EXPERIMENTAL: 'true'
         run: |
-          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.ref_name}}@${{steps.build_and_push.outputs.digest}}"
-          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_full}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.meta.outputs.version_short}}@${{steps.build_and_push.outputs.digest}}"
