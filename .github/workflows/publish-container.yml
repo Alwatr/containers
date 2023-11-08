@@ -26,7 +26,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - image: traefik
+          - name: traefik
             path: traefik
             version:
               short: 1
@@ -56,19 +56,19 @@ jobs:
               short: 8
               full: 8.2
 
-          - image: adminer
+          - name: adminer
             path: adminer
             version:
               short: 4
               full: 4.8-3.24.4
 
-          - image: mariadb
+          - name: mariadb
             path: mariadb
             version:
               short: 10
               full: 10.9-3.26.4
 
-          - image: nocodb
+          - name: nocodb
             path: nocodb
             version:
               short: 0.202
