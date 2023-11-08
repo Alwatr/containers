@@ -15,5 +15,5 @@ LABEL org.opencontainers.image.title="alwatr/php" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/php/7.4-apache" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/php" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
-      ir.alwatr.image.version.full="7.4.33-apache" \
-      ir.alwatr.image.version.short="7.4-apache"
+      cloud.alwatr.image.version.full="7.4.33-apache" \
+      cloud.alwatr.image.version.short="7.4-apache"

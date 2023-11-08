@@ -36,5 +36,5 @@ LABEL org.opencontainers.image.title="alwatr/alpine" \
       maintainer="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
       version="3.17" \
       description="This is a lightweight Linux image for use in containerized applications. It includes only the necessary packages and dependencies to keep the image size small and efficient, packaged by Alwatr." \
-      ir.alwatr.image.version.full="3.17.5" \
-      ir.alwatr.image.version.short="3"
+      cloud.alwatr.image.version.full="3.17.5" \
+      cloud.alwatr.image.version.short="3"

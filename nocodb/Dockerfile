@@ -15,5 +15,5 @@ LABEL org.opencontainers.image.title="alwatr/nocodb" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/nocodb" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/nocodb" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
-      ir.alwatr.image.version.full="0.202.5" \
-      ir.alwatr.image.version.short="0"
+      cloud.alwatr.image.version.full="0.202.5" \
+      cloud.alwatr.image.version.short="0"

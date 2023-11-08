@@ -15,5 +15,5 @@ LABEL org.opencontainers.image.title="alwatr/mariadb" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/mariadb" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/mariadb" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
-      ir.alwatr.image.version.full="10.11-3.26.4" \
-      ir.alwatr.image.version.short="10.11"
+      cloud.alwatr.image.version.full="10.11-3.26.4" \
+      cloud.alwatr.image.version.short="10.11"

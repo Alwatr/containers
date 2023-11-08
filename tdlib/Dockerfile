@@ -41,5 +41,5 @@ LABEL org.opencontainers.image.title="alwatr/tdlib" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/tdlib" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/tdlib" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
-      ir.alwatr.image.version.full="1.8.0" \
-      ir.alwatr.image.version.short="1"
+      cloud.alwatr.image.version.full="1.8.0" \
+      cloud.alwatr.image.version.short="1"
