@@ -28,81 +28,42 @@ jobs:
         include:
           - name: traefik
             path: traefik/1
-            version:
-              short: 1
-              full: 1.7.34
 
           - name: traefik
             path: traefik/3
-            version:
-              short: 3
-              full: 3.0.0-beta4
 
           - name: alpine
             path: alpine
-            version:
-              short: 3
-              full: 3.17
 
           - name: nocodb
             path: nocodb
-            version:
-              short: 0
-              full: 0.202.5
 
           - name: php
             path: php/7.4-apache
-            version:
-              short: 7-apache
-              full: 7.4-apache
 
           - name: php
             path: php/7.4-fpm
-            version:
-              short: 7
-              full: 7.4
 
           - name: php
             path: php/8.2-fpm
-            version:
-              short: 8
-              full: 8.2
 
           - name: adminer
             path: adminer
-            version:
-              short: 4
-              full: 4.8-3.24.4
 
           - name: mariadb
             path: mariadb/11
-            version:
-              short: 11
-              full: 11.0-3.26.4
 
           - name: mariadb
             path: mariadb/10
-            version:
-              short: 10
-              full: 10.9-3.26.4
 
           - name: wordpress
             path: wordpress/php7.4
-            version:
-              short: 6-php7
-              full: 6.1-php7.4-fpm
 
           - name: wordpress
             path: wordpress/php8.2
-            version:
-              short: 6
-              full: 6.3-php8.2-fpm
 
           - name: tdlib
             path: tdlib
-            version:
-              short: 1
-              full: 1.8.0
 
     permissions:
       contents: read
@@ -120,6 +81,15 @@ jobs:
           filters: |
             container_folder:
               ./${{ matrix.path }}/*
+
+      - name: 🏗 Extract version from dockerfile
+        if: ${{ steps.file_change.outputs.container_folder == 'true' }}
+        id: version
+        run: |
+          version_full=$(grep 'cloud.alwatr.image.version.full' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
+          version_short=$(grep 'cloud.alwatr.image.version.short' ./${{ matrix.path }}/Dockerfile | cut -d'"' -f2)
+          echo "version_full=$version_full" >> $GITHUB_OUTPUT
+          echo "version_short=$version_short" >> $GITHUB_OUTPUT
 
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder == 'true' }}
@@ -152,8 +122,8 @@ jobs:
           context: ./${{matrix.path}}
           push: ${{github.event_name != 'pull_request'}}
           tags: |
-            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.short}}
-            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.full}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_full}}
+            ${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_short}}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
           build-args: |
@@ -165,5 +135,5 @@ jobs:
         env:
           COSIGN_EXPERIMENTAL: 'true'
         run: |
-          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.short}}@${{steps.build_and_push.outputs.digest}}"
-          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{matrix.version.full}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_full}}@${{steps.build_and_push.outputs.digest}}"
+          cosign sign --yes "${{env.REGISTRY}}/${{env.USER}}/${{matrix.name}}:${{steps.version.outputs.version_short}}@${{steps.build_and_push.outputs.digest}}"

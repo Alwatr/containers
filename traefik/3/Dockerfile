@@ -14,4 +14,6 @@ LABEL org.opencontainers.image.title="alwatr/traefik" \
       org.opencontainers.image.source="https://github.com/Alwatr/containers/tree/main/traefik" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/traefik" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/traefik" \
-      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)"
+      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
+      cloud.alwatr.image.version.full="3.0.0-beta4" \
+      cloud.alwatr.image.version.short="3"

@@ -14,4 +14,6 @@ LABEL org.opencontainers.image.title="alwatr/wordpress" \
       org.opencontainers.image.source="https://github.com/Alwatr/containers/tree/main/wordpress/php8.2" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/main/wordpress/php8.2" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/main/wordpress" \
-      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)"
+      org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
+      cloud.alwatr.image.version.full="6.3.2-php8.2-fpm" \
+      cloud.alwatr.image.version.short="6-php8.2"

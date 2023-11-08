@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.17
+FROM docker.io/library/alpine:3.17.5
 
 ARG APK_TESTING
 RUN set -ex; \
@@ -22,9 +22,9 @@ ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/alpine" \
       org.opencontainers.image.description="This is a lightweight Linux image for use in containerized applications. It includes only the necessary packages and dependencies to keep the image size small and efficient, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/library/alpine:3.17" \
-      org.opencontainers.image.version="3.17" \
-      org.opencontainers.image.ref.name="3.17" \
+      org.opencontainers.image.base.name="docker.io/library/alpine:3.17.5" \
+      org.opencontainers.image.version="3.17.5" \
+      org.opencontainers.image.ref.name="3.17.5" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.created=${BUILD_DATE} \
       org.opencontainers.image.revision=${BUILD_REV} \
@@ -35,4 +35,6 @@ LABEL org.opencontainers.image.title="alwatr/alpine" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
       maintainer="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
       version="3.17" \
-      description="This is a lightweight Linux image for use in containerized applications. It includes only the necessary packages and dependencies to keep the image size small and efficient, packaged by Alwatr."
+      description="This is a lightweight Linux image for use in containerized applications. It includes only the necessary packages and dependencies to keep the image size small and efficient, packaged by Alwatr." \
+      cloud.alwatr.image.version.full="3.17.5" \
+      cloud.alwatr.image.version.short="3"
