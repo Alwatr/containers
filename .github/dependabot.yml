@@ -1,7 +1,37 @@
-version: 2
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
+version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
+    versioning-strategy: increase
+    open-pull-requests-limit: 20
+    reviewers:
+      - AliMD
     schedule:
-      interval: "daily"
+      interval: daily
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+
+  - package-ecosystem: docker
+    directory: /
+    versioning-strategy: increase
+    open-pull-requests-limit: 20
+    reviewers:
+      - AliMD
+    schedule:
+      interval: daily
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+    # groups:
+    #   github-actions:
+    #     patterns:
+    #       - '*'
