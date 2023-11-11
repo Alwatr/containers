@@ -191,3 +191,13 @@ updates:
       - priority-low
       - maintenance
 
+  - package-ecosystem: docker
+    directory: /postgres
+    reviewers:
+      - AliMD
+    schedule:
+      interval: daily
+    labels:
+      - ci
+      - priority-low
+      - maintenance

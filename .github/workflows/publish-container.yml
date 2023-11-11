@@ -64,6 +64,9 @@ jobs:
           - name: tdlib
             path: tdlib
 
+          - name: postgres
+            path: postgres
+
     permissions:
       contents: read
       packages: write
