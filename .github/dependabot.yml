@@ -29,7 +29,7 @@ updates:
     reviewers:
       - AliMD
     schedule:
-      interval: daily
+      interval: weekly
     labels:
       - ci
       - priority-low
@@ -81,7 +81,7 @@ updates:
     reviewers:
       - AliMD
     schedule:
-      interval: daily
+      interval: weekly
     labels:
       - ci
       - priority-low
@@ -96,7 +96,7 @@ updates:
     reviewers:
       - AliMD
     schedule:
-      interval: daily
+      interval: weekly
     labels:
       - ci
       - priority-low
@@ -122,7 +122,7 @@ updates:
     reviewers:
       - AliMD
     schedule:
-      interval: daily
+      interval: weekly
     labels:
       - ci
       - priority-low
@@ -185,7 +185,7 @@ updates:
     reviewers:
       - AliMD
     schedule:
-      interval: daily
+      interval: weekly
     labels:
       - ci
       - priority-low
