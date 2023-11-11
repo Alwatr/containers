@@ -1,12 +1,12 @@
-FROM docker.io/wodby/postgres:12-1.31.4
+FROM docker.io/wodby/postgres:13-1.31.4
 
 ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/postgres" \
       org.opencontainers.image.description="Alpine-based PostgreSQL container image with orchestrations, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/wodby/postgres:12-1.31.4" \
-      org.opencontainers.image.version="12.16" \
-      org.opencontainers.image.ref.name="12-1.31.4" \
+      org.opencontainers.image.base.name="docker.io/wodby/postgres:13-1.31.4" \
+      org.opencontainers.image.version="13.12" \
+      org.opencontainers.image.ref.name="13-1.31.4" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.created=${BUILD_DATE} \
       org.opencontainers.image.revision=${BUILD_REV} \
@@ -15,5 +15,5 @@ LABEL org.opencontainers.image.title="alwatr/postgres" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/next/postgres" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/next/postgres" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
-      cloud.alwatr.image.version.full="12.16" \
-      cloud.alwatr.image.version.short="12"
+      cloud.alwatr.image.version.full="13.12" \
+      cloud.alwatr.image.version.short="13"
