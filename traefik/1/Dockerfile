@@ -1,4 +1,4 @@
-FROM docker.io/library/traefik:v1.7.34-alpine
+FROM docker.io/library/traefik:v2.0-alpine
 
 ARG BUILD_REV
 ARG BUILD_DATE
