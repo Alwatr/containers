@@ -30,7 +30,7 @@ ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/tdlib" \
       org.opencontainers.image.description="A library to access Telegram database, written in C++ and cross-platform, packaged by Alwatr." \
-      org.opencontainers.image.base.name="ghcr.io/alwatr/alpine:3.17" \
+      org.opencontainers.image.base.name="ghcr.io/alwatr/alpine:3.18.4" \
       org.opencontainers.image.version="1.8.0" \
       org.opencontainers.image.ref.name="1.8.0" \
       org.opencontainers.image.licenses="MIT" \
