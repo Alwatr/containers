@@ -19,8 +19,13 @@ updates:
           - '*'
 
   # docker images
+
   - package-ecosystem: docker
     directory: /traefik/1
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     reviewers:
       - AliMD
     schedule:
@@ -32,6 +37,10 @@ updates:
 
   - package-ecosystem: docker
     directory: /traefik/3
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     reviewers:
       - AliMD
     schedule:
@@ -65,6 +74,10 @@ updates:
 
   - package-ecosystem: docker
     directory: /php/7.4-apache
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     reviewers:
       - AliMD
     schedule:
@@ -76,6 +89,10 @@ updates:
 
   - package-ecosystem: docker
     directory: /php/7.4-fpm
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     reviewers:
       - AliMD
     schedule:
@@ -87,6 +104,10 @@ updates:
 
   - package-ecosystem: docker
     directory: /php/8.2-fpm
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     reviewers:
       - AliMD
     schedule:
@@ -109,6 +130,10 @@ updates:
 
   - package-ecosystem: docker
     directory: /mariadb/11
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     reviewers:
       - AliMD
     schedule:
@@ -120,6 +145,10 @@ updates:
 
   - package-ecosystem: docker
     directory: /mariadb/10
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
     reviewers:
       - AliMD
     schedule:
