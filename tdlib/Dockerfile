@@ -1,4 +1,4 @@
-FROM ghcr.io/alwatr/alpine:3.17
+FROM ghcr.io/alwatr/alpine:3.18.4
 
 ARG TDLIB_VERSION=1.8.0
 RUN set -ex; \
