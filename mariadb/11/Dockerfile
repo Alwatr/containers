@@ -1,4 +1,4 @@
-FROM docker.io/wodby/mariadb:11.0-3.26.5
+FROM docker.io/wodby/mariadb:11-3.26.5
 
 ARG BUILD_REV
 ARG BUILD_DATE
