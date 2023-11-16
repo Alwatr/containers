@@ -1,4 +1,4 @@
-FROM docker.io/wodby/postgres:15-1.31.4
+FROM docker.io/wodby/postgres:16-1.32.0
 
 ARG BUILD_REV
 ARG BUILD_DATE
