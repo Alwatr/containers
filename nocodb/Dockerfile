@@ -1,4 +1,4 @@
-FROM docker.io/nocodb/nocodb:0.202.5
+FROM docker.io/nocodb/nocodb:0.202.7
 
 ARG BUILD_REV
 ARG BUILD_DATE
