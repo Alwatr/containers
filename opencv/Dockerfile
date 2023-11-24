@@ -99,8 +99,8 @@ ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/opencv" \
       org.opencontainers.image.description="Native OpenCV library in Node.js, packaged by Alwatr." \
       org.opencontainers.image.base.name="ghcr.io/alwatr/node:20.10.0" \
-      org.opencontainers.image.version="${OPENCV_VERSION}" \
-      org.opencontainers.image.ref.name="${OPENCV_VERSION}" \
+      org.opencontainers.image.version=${OPENCV_VERSION} \
+      org.opencontainers.image.ref.name=${OPENCV_VERSION} \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.created=${BUILD_DATE} \
       org.opencontainers.image.revision=${BUILD_REV} \
@@ -109,5 +109,5 @@ LABEL org.opencontainers.image.title="alwatr/opencv" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/next/opencv" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/next/opencv" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com), S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir/)" \
-      cloud.alwatr.image.version.full="${OPENCV_VERSION}" \
+      cloud.alwatr.image.version.full=${OPENCV_VERSION} \
       cloud.alwatr.image.version.short="4"
