@@ -67,6 +67,9 @@ jobs:
           - name: postgres
             path: postgres
 
+          - name: node
+            path: node
+
     permissions:
       contents: read
       packages: write
