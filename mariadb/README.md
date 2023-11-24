@@ -2,6 +2,22 @@
 
 MariaDB was designed as a drop-in replacement of MySQL(R) with more features, new storage engines, fewer bugs, and better performance, packaged by Alwatr.
 
+## Usage
+
+Check versions from [Alwatr/packages](https://github.com/Alwatr/containers/pkgs/container/mariadb)
+
+### Install from the command line
+
+```bash
+docker pull ghcr.io/alwatr/mariadb:11.1.3
+```
+
+### Use as base image in Dockerfile
+
+```dockerfile
+FROM ghcr.io/alwatr/mariadb:11.1.3
+```
+
 ## Environment Variables
 
 | Variable                                 | v11.x                | v10.x                |

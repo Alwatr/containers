@@ -2,6 +2,22 @@
 
 Alpine-based PostgreSQL container image with orchestrations, packaged by Alwatr.
 
+## Usage
+
+Check versions from [Alwatr/packages](https://github.com/Alwatr/containers/pkgs/container/postgres)
+
+### Install from the command line
+
+```bash
+docker pull ghcr.io/alwatr/postgres:16.1
+```
+
+### Use as base image in Dockerfile
+
+```dockerfile
+FROM ghcr.io/alwatr/postgres:16.1
+```
+
 ## Environment Variables
 
 | Variable                                | Default Value        | Description        |
