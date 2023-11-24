@@ -1,28 +1,28 @@
 FROM ghcr.io/alwatr/node:20.10.0
 
 ARG RUNTIME_DEPS='libpng-dev libjpeg-turbo libwebp tiff openexr jasper openblas libx11-dev zlib'
-ARG BUILD_DEPS='xz wget unzip cmake build-base python linux-headers libjpeg-turbo-dev libwebp-dev tiff-dev openexr-dev jasper-dev openblas-dev zlib-dev'
+ARG BUILD_DEPS='xz wget unzip cmake build-base python3 linux-headers libjpeg-turbo-dev libwebp-dev tiff-dev openexr-dev jasper-dev openblas-dev zlib-dev'
 ARG OPENCV_VERSION=4.8.1
 ARG DLIB_VERSION=19.24.2
-ARG LIB_PREFIX='/usr/local'
+ARG LIB_PREFIX=/usr/local
 
 ENV OPENCV_VERSION=${OPENCV_VERSION} \
     DLIB_VERSION=${DLIB_VERSION} \
     LIB_PREFIX=${LIB_PREFIX} \
     OPENCV4NODEJS_DISABLE_AUTOBUILD=1 \
-    DLIB_INCLUDE_DIR='$LIB_PREFIX/include' \
-    DLIB_LIB_DIR='$LIB_PREFIX/lib'
+    DLIB_INCLUDE_DIR=${LIB_PREFIX}/include \
+    DLIB_LIB_DIR=${LIB_PREFIX}/lib
 
-RUN apk add -u --no-cache --virtual .build-dependencies $BUILD_DEPS \
+RUN apk add --upgrade --no-cache --virtual .build-dependencies $BUILD_DEPS \
   && wget -q https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip -O opencv.zip \
   && wget -q https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip -O opencv_contrib.zip \
   && wget -q https://github.com/davisking/dlib/archive/v${DLIB_VERSION}.zip -O dlib.zip \
   && mkdir /opencv \
   && mv opencv.zip opencv_contrib.zip /opencv \
   && cd /opencv \
-  && unzip -qq opencv.zip \
+  && unzip -q opencv.zip \
   && mv opencv-${OPENCV_VERSION} opencv \
-  && unzip -qq opencv_contrib.zip \
+  && unzip -q opencv_contrib.zip \
   && mv opencv_contrib-${OPENCV_VERSION} opencv_contrib \
   && ls -la \
   && mkdir opencv/build \
@@ -77,7 +77,7 @@ RUN apk add -u --no-cache --virtual .build-dependencies $BUILD_DEPS \
     -D DLIB_PNG_SUPPORT=ON \
     -D DLIB_JPEG_SUPPORT=ON \
     -D DLIB_USE_CUDA=OFF" \
-  && unzip -qq dlib.zip \
+  && unzip -q dlib.zip \
   && mv dlib-${DLIB_VERSION} dlib \
   && rm dlib.zip \
   && cd dlib \
@@ -91,7 +91,7 @@ RUN apk add -u --no-cache --virtual .build-dependencies $BUILD_DEPS \
   && cd / \
   && rm -rf /dlib \
   && apk del .build-dependencies \
-  && apk add -u --no-cache $RUNTIME_DEPS \
+  && apk add --upgrade --no-cache $RUNTIME_DEPS \
   && rm -rf /var/cache/apk /usr/share/man /usr/local/share/man /tmp/*
 
 ARG BUILD_REV
