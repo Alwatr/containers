@@ -70,6 +70,9 @@ jobs:
           - name: node
             path: node
 
+          - name: opencv
+            path: opencv
+
     permissions:
       contents: read
       packages: write
