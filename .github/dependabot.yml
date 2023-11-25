@@ -227,3 +227,14 @@ updates:
       - ci
       - priority-low
       - maintenance
+
+  - package-ecosystem: docker
+    directory: /python
+    reviewers:
+      - AliMD
+    schedule:
+      interval: daily
+    labels:
+      - ci
+      - priority-low
+      - maintenance

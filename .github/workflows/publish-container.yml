@@ -73,6 +73,9 @@ jobs:
           - name: opencv
             path: opencv
 
+          - name: python
+            path: python
+
     permissions:
       contents: read
       packages: write
