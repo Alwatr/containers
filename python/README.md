@@ -16,4 +16,11 @@ docker pull ghcr.io/alwatr/python:3.12.0
 
 ```dockerfile
 FROM ghcr.io/alwatr/python:3.12.0
+
+COPY deps.txt ./
+RUN pip install --no-cache-dir -r deps.txt
+
+COPY . .
+
+CMD [ "python", "./start.py" ]
 ```

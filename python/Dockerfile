@@ -1,5 +1,7 @@
 FROM docker.io/library/python:3.12.0-alpine3.18
 
+WORKDIR /app
+
 ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/python" \
