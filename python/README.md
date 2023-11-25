@@ -9,11 +9,11 @@ Check versions from [Alwatr/packages](https://github.com/Alwatr/containers/pkgs/
 ### Install from the command line
 
 ```bash
-docker pull ghcr.io/alwatr/python:3.11.6
+docker pull ghcr.io/alwatr/python:3.12.0
 ```
 
 ### Use as base image in Dockerfile
 
 ```dockerfile
-FROM ghcr.io/alwatr/python:3.11.6
+FROM ghcr.io/alwatr/python:3.12.0
 ```
