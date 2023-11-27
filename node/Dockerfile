@@ -1,5 +1,7 @@
 FROM docker.io/library/node:20.10.0-alpine3.18
 
+WORKDIR /app
+
 ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/node" \
