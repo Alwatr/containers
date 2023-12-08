@@ -1,4 +1,4 @@
-FROM docker.io/library/wordpress:6.4.1-php8.2-fpm
+FROM docker.io/library/wordpress:6.4.2-php8.2-fpm
 
 ARG BUILD_REV
 ARG BUILD_DATE
