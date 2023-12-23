@@ -1,6 +1,7 @@
 FROM docker.io/library/node:20.10.0-alpine3.18
 
 WORKDIR /app
+ENV NODE_ENV production
 
 ARG BUILD_REV
 ARG BUILD_DATE
