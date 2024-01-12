@@ -110,7 +110,7 @@ jobs:
 
       - name: 🏗 Install cosign
         if: ${{ github.event_name != 'pull_request' && steps.file_change.outputs.container_folder != 'false' }}
-        uses: sigstore/cosign-installer@v3.2.0
+        uses: sigstore/cosign-installer@v3.3.0
 
       - name: 🏗 Setup Docker Buildx
         if: ${{ steps.file_change.outputs.container_folder != 'false' }}
@@ -118,7 +118,7 @@ jobs:
 
       - name: 🏗 Cache Docker Layers
         if: ${{ steps.file_change.outputs.container_folder != 'false' }}
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v3.3.3
         with:
           path: /tmp/.buildx-cache
           key: container/${{ matrix.path }}
