@@ -1,12 +1,12 @@
-FROM docker.io/wodby/mariadb:10.11-3.27.1
+FROM docker.io/wodby/mariadb:10.11-3.28.2
 
 ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/mariadb" \
       org.opencontainers.image.description="MariaDB was designed as a drop-in replacement of MySQL(R) with more features, new storage engines, fewer bugs, and better performance, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/wodby/mariadb:10.11-3.27.1" \
+      org.opencontainers.image.base.name="docker.io/wodby/mariadb:10.11-3.28.2" \
       org.opencontainers.image.version="10.11" \
-      org.opencontainers.image.ref.name="10.11-3.27.1" \
+      org.opencontainers.image.ref.name="10.11-3.28.2" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.created=${BUILD_DATE} \
       org.opencontainers.image.revision=${BUILD_REV} \
