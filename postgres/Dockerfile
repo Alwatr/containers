@@ -4,9 +4,9 @@ ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/postgres" \
       org.opencontainers.image.description="Alpine-based PostgreSQL container image with orchestrations, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/wodby/postgres:15-1.32.0" \
+      org.opencontainers.image.base.name="docker.io/wodby/postgres:16-1.33.2" \
       org.opencontainers.image.version="16.1" \
-      org.opencontainers.image.ref.name="15-1.32.0" \
+      org.opencontainers.image.ref.name="16.1.32.0" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.created=${BUILD_DATE} \
       org.opencontainers.image.revision=${BUILD_REV} \
