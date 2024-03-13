@@ -1,4 +1,4 @@
-FROM ghcr.io/alwatr/alpine:3.18.4
+FROM ghcr.io/alwatr/alpine:3.19.1
 
 ARG RUNTIME_DEPS='libpng-dev libjpeg-turbo libwebp tiff openexr jasper openblas libx11-dev zlib'
 ARG BUILD_DEPS='xz wget unzip cmake build-base python3 linux-headers libjpeg-turbo-dev libwebp-dev tiff-dev openexr-dev jasper-dev openblas-dev zlib-dev'
@@ -98,7 +98,7 @@ ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/opencv" \
       org.opencontainers.image.description="Native OpenCV library, packaged by Alwatr." \
-      org.opencontainers.image.base.name="ghcr.io/alwatr/alpine:3.18.4" \
+      org.opencontainers.image.base.name="ghcr.io/alwatr/alpine:3.19.1" \
       org.opencontainers.image.version="4.8.1" \
       org.opencontainers.image.ref.name="4.8.1-dlib19.24.2" \
       org.opencontainers.image.licenses="MIT" \
