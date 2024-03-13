@@ -1,4 +1,4 @@
-FROM ghcr.io/alwatr/alpine:3.18.4
+FROM ghcr.io/alwatr/alpine:3.19.1
 
 ARG RUNTIME_DEPS='libpng-dev libjpeg-turbo libwebp tiff openexr jasper openblas libx11-dev zlib'
 ARG BUILD_DEPS='xz wget unzip cmake build-base python3 linux-headers libjpeg-turbo-dev libwebp-dev tiff-dev openexr-dev jasper-dev openblas-dev zlib-dev'
