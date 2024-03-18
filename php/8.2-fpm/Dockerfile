@@ -1,4 +1,4 @@
-FROM docker.io/library/php:8.3.3-fpm
+FROM docker.io/library/php:8.3.4-fpm
 
 ARG BUILD_REV
 ARG BUILD_DATE
