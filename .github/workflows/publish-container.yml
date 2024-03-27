@@ -65,7 +65,10 @@ jobs:
             path: postgres
 
           - name: node
-            path: node
+            path: node/lts
+
+          - name: node
+            path: node/latest
 
           - name: opencv
             path: opencv
