@@ -192,11 +192,22 @@ updates:
       - maintenance
 
   - package-ecosystem: docker
-    directory: /node
+    directory: /node/lts
     ignore:
       - dependency-name: "*"
         update-types:
           - version-update:semver-major
+    reviewers:
+      - AliMD
+    schedule:
+      interval: daily
+    labels:
+      - ci
+      - priority-low
+      - maintenance
+
+  - package-ecosystem: docker
+    directory: /node/latest
     reviewers:
       - AliMD
     schedule:
