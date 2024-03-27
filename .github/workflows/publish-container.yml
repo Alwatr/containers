@@ -79,6 +79,9 @@ jobs:
           - name: golang
             path: golang
 
+          - name: bun
+            path: bun
+
     permissions:
       contents: read
       packages: write
