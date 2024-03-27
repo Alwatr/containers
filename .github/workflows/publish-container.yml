@@ -61,9 +61,6 @@ jobs:
           - name: wordpress
             path: wordpress/php8.2
 
-          - name: tdlib
-            path: tdlib
-
           - name: postgres
             path: postgres
 

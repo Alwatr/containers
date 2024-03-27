@@ -181,17 +181,6 @@ updates:
       - maintenance
 
   - package-ecosystem: docker
-    directory: /tdlib
-    reviewers:
-      - AliMD
-    schedule:
-      interval: weekly
-    labels:
-      - ci
-      - priority-low
-      - maintenance
-
-  - package-ecosystem: docker
     directory: /postgres
     reviewers:
       - AliMD
