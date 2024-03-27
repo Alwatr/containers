@@ -9,11 +9,11 @@ Check versions from [Alwatr/packages](https://github.com/Alwatr/containers/pkgs/
 ### Install from the command line
 
 ```bash
-docker pull ghcr.io/alwatr/bun:1.0.20
+docker pull ghcr.io/alwatr/bun:1
 ```
 
 ### Use as base image in Dockerfile
 
 ```dockerfile
-FROM ghcr.io/alwatr/bun:1.0.20
+FROM ghcr.io/alwatr/bun:1
 ```
