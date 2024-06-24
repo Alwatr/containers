@@ -1,4 +1,4 @@
-FROM docker.io/oven/bun:1.0.35-alpine
+FROM docker.io/oven/bun:1.1.16-alpine
 
 ARG BUILD_REV
 ARG BUILD_DATE
