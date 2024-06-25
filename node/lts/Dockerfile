@@ -1,4 +1,4 @@
-FROM docker.io/library/node:20.12.0-alpine3.19
+FROM docker.io/library/node:20.15.0-alpine3.19
 
 WORKDIR /app
 ENV NODE_ENV production
