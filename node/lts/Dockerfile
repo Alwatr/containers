@@ -1,4 +1,4 @@
-FROM docker.io/library/node:20.18.0-alpine3.20
+FROM docker.io/library/node:20.18.0-alpine
 
 WORKDIR /app
 ENV NODE_ENV production
@@ -7,7 +7,7 @@ ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/node" \
       org.opencontainers.image.description="Cross-platform ECMAScript runtime environment, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/library/node:20.18.0-alpine3.20" \
+      org.opencontainers.image.base.name="docker.io/library/node:20.18.0-alpine" \
       org.opencontainers.image.version="20.18.0" \
       org.opencontainers.image.ref.name="20.18.0" \
       org.opencontainers.image.licenses="MIT" \

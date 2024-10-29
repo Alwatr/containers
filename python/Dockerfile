@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3.12.2-alpine3.18
+FROM docker.io/library/python:3.12.2-alpine
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/python" \
       org.opencontainers.image.description="Lazy programming language, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/library/python:3.12.2-alpine3.18" \
+      org.opencontainers.image.base.name="docker.io/library/python:3.12.2-alpine" \
       org.opencontainers.image.version="3.12.2" \
       org.opencontainers.image.ref.name="3.12.2" \
       org.opencontainers.image.licenses="MIT" \
