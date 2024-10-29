@@ -1,10 +1,10 @@
-FROM docker.io/library/golang:1.22.3-alpine3.18
+FROM docker.io/library/golang:1.22.3-alpine
 
 ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/golang" \
       org.opencontainers.image.description="Go (golang) is a general purpose, higher-level, imperative programming language, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/library/golang:1.22.1-alpine3.18" \
+      org.opencontainers.image.base.name="docker.io/library/golang:1.22.1-alpine" \
       org.opencontainers.image.version="1.22.1" \
       org.opencontainers.image.ref.name="1.22.1" \
       org.opencontainers.image.licenses="MIT" \
