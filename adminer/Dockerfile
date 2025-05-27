@@ -1,4 +1,4 @@
-FROM docker.io/wodby/adminer:4.8-3.24.4
+FROM docker.io/wodby/adminer:5-4.2.4
 
 ARG BUILD_REV
 ARG BUILD_DATE
