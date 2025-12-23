@@ -1,4 +1,4 @@
-FROM docker.io/library/python:3.12.2-alpine
+FROM docker.io/library/python:3.14.2-alpine
 
 WORKDIR /app
 
