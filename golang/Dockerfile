@@ -1,4 +1,4 @@
-FROM docker.io/library/golang:1.22.3-alpine
+FROM docker.io/library/golang:1.25.6-alpine
 
 ARG BUILD_REV
 ARG BUILD_DATE
