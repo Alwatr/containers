@@ -1,12 +1,12 @@
-FROM docker.io/library/traefik:v3.5.3
+FROM docker.io/library/traefik:v3.6.7
 
 ARG BUILD_REV
 ARG BUILD_DATE
 LABEL org.opencontainers.image.title="alwatr/traefik" \
       org.opencontainers.image.description="A modern reverse-proxy, packaged by Alwatr." \
-      org.opencontainers.image.base.name="docker.io/library/traefik:v3.5.3" \
-      org.opencontainers.image.version="3.5.3" \
-      org.opencontainers.image.ref.name="3.5.3" \
+      org.opencontainers.image.base.name="docker.io/library/traefik:v3.6.7" \
+      org.opencontainers.image.version="3.6.7" \
+      org.opencontainers.image.ref.name="3.6.7" \
       org.opencontainers.image.created=${BUILD_DATE} \
       org.opencontainers.image.revision=${BUILD_REV} \
       org.opencontainers.image.vendor="Alwatr" \
@@ -14,5 +14,5 @@ LABEL org.opencontainers.image.title="alwatr/traefik" \
       org.opencontainers.image.url="https://github.com/Alwatr/containers/tree/next/traefik" \
       org.opencontainers.image.documentation="https://github.com/Alwatr/containers/tree/next/traefik" \
       org.opencontainers.image.authors="S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com)" \
-      cloud.alwatr.image.version.full="3.5.3" \
+      cloud.alwatr.image.version.full="3.6.7" \
       cloud.alwatr.image.version.short="3"
