@@ -1,9 +1,11 @@
 FROM docker.io/oven/bun:canary-alpine
 
 WORKDIR /app
-ENV NODE_ENV production
-ENV host="0.0.0.0" \
+
+ENV NODE_ENV production \
+    host="0.0.0.0" \
     port="80"
+
 EXPOSE 80
 
 RUN apk add --no-cache curl
