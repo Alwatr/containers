@@ -1,4 +1,4 @@
-FROM docker.io/library/traefik:v3.7.1
+FROM docker.io/library/traefik:v3.7.12
 
 ARG BUILD_REV
 ARG BUILD_DATE
