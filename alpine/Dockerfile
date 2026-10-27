@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.24.1
+FROM docker.io/library/alpine:3.24.3
 
 ARG APK_TESTING
 RUN set -ex; \
