@@ -1,4 +1,4 @@
-FROM docker.io/oven/bun:1.4.3-alpine
+FROM docker.io/oven/bun:1.4.4-alpine
 
 WORKDIR /app
 
